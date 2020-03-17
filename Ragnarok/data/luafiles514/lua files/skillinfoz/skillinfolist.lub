@@ -9094,7 +9094,7 @@ SKILL_INFO_LIST = {
 		bSeperateLv = true,
 		AttackRange = { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 },
 		_NeedSkillList = {
-			{ SKID.WM_DOMINION_IMPULSE, 1 }
+			{ SKID.WM_REVERBERATION, 5 }
 		}
 	},
 	[SKID.SA_LEVELUP] = {
