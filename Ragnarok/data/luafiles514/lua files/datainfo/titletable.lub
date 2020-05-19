@@ -43,7 +43,9 @@ title_tbl = {
 	[1041] = "Death Slayer",
 	[1042] = "Undead Slayer",
 	[1043] = "Strouf Slayer",
-	[1044] = "Sting Slayer"
+	[1044] = "Sting Slayer",
+	[1045] = "Conqueror of Illusion",
+	[1046] = "King Maker"
 }
 
 GetTitleString = function(titleID)
