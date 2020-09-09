@@ -14,7 +14,7 @@ Misc
   ^663399 = Debuff (Curse, Freeze,...)
   ^0033CC = Location
   ^FF0000 = Race/Size
-  ^0033CC = Job Classes in SkillInfoz
+  ^0033CC = Job Classes
 
 Skill Description:
 	^0000FF = Skill Names + Status (Hiding,...)
@@ -74,23 +74,43 @@ Skill Description:
 	"Description: ^777777 ^000000",
 
 Item Description:
-	- Official Server Tags:
-	"[jRO Item]",
-	"[cRO Item]",
-	"[twRO Item]",
-	"[iRO Item]",
-
 	unidentifiedDescriptionName = { "Can be identified by using a ^990099Magnifier^000000." },
 	
 	- Stats Codings:
 	"Base ^CC6600AGI^000000 is at least ^FF000070^000000:",
 	"For each ^0000FF20^000000 base ^CC6600STR^000000:",
+	"For each ^0000FF50 ^CC6600Base Level^000000:",
+	"STR +",
+	"AGI +",
+	"VIT +",
+	"INT +",
+	"DEX +",
+	"LUK +",
+	"ATK +", "ATK +%",
+	"MATK +", "MATK +%",
+	"DEF +", "DEF +%",
+	"MDEF +", "MDEF +%",
+	"HIT +", "FLEE +",
+	"Perfect Dodge +",
+	"Perfect HIT +", "Perfect HIT +%",
+	"MaxHP +", "MaxHP +%",
+	"MaxSP +", "MaxSP +%",
+	"Increases HP Recovery Rate by %.",
+	"Increases SP Recovery Rate by %.",
+	"Range is x cells",
+	
+	"<STAT> +1 multiplied with total skill level of ^0033CC<Class>^000000's exclusive/related skills:",
+	"^009900<Skill List> and <Last Skill>^000000",
 	
 	- Skill Codings:
 	"For each Level of ^009900<Skill>^000000:",
 	"Increases damage of ^009900<Skill>^000000 by %.",
 	"Enables the use of ^0000FF<Skill>^000000.",
-	"Enables the use of ^0000FF<Skill>^000000 Level X.",
+	"Enables the use of Level X ^0000FF<Skill>^000000.",
+	"When ^009900<Skill>^000000 is used:",
+	"When ^009900<Skill>^000000 is mastered:",
+	"When Level X ^009900<Skill>^000000 is learned:",
+	"When ^0033CC<Base Class>^000000 classes uses ^009900<Skill List>^000000 or ^009900<Last Skill>^000000:",
 	
 	"Enables interrupted skill casting.",
 	
@@ -107,10 +127,13 @@ Item Description:
 	"For the highest Level of either ^009900<Skill>^000000, ^009900<Skill>^000000 or ^009900<Skill>^000000,",
 	"increase damage dealt with ^009900<Skill>^000000 by % per skill Level.",
 	
-	"Enables physical attacks to auto cast ^009900^000000 Level X at a certain chance. (If you learned a higher Level, it will auto cast that Level instead.)",
+	"Physical attacks have a certain chance to auto cast Level X ^009900<Skill>^000000. (If you learned a higher Level, it will auto cast that Level instead.)",
 
 	- Basic Equipment Codings:
 	"When equipped with ^990099<Equipment>^000000:",
+	"When equipped with 2 types of ^990099<Class> Shadow^000000, ^990099<Class> Shadow^000000 or ^990099<Class> Shadow^000000 Equipment:",
+	"When equipped by ^0033CC<Base Class>^000000 classes:",
+	"When equipped by ^0033CC<Certain Class>^000000:",
 	"^663399Indestructible in battle^000000",
 	
 	- Basic Card Compounding:
@@ -119,9 +142,10 @@ Item Description:
 	- Refine Codings:
 	"^0000FFFor each Refine Level^000000:",
 	"^0000FFFor each Refine Level^000000 of ^990099<Equipment>^000000:",
-	"^0000FFFor each Refine Level above ^0000FF+9 or higher^000000 of ^990099<Equipment>^000000 and ^990099<Equipment>^000000:",
+	"^0000FFFor each Refine Level above ^0000FF+9^000000 of ^990099<Equipment>^000000 and ^990099<Equipment>^000000:",
 	"^0000FFFor each Refine Level^000000 equal or above ^0000FF+6^000000:",
 	"^0000FFFor each Refine Level^000000 above ^0000FF+6^000000:",
+	"^0000FFFor each 2 Refine Levels^000000 of equipped ^990099<Equipment Type>^000000:",
 	"^0000FFFor each 2 Refine Levels^000000:",
 	"^0000FFRefine Level +7^000000:",
 	
@@ -129,6 +153,8 @@ Item Description:
 	"If ^0000FFRefine Level^000000 of ^990099<Equipment>^000000 is ^0000FF+7 or higher^000000:",
 	"If ^0000FFtotal Refine Level^000000 of ^990099<Equipment>, <Equipment>^000000 and ^990099<Equipment>^000000 is ^0000FF+27 or higher^000000:",
 	"If ^0000FFtotal Refine Level of entire set^000000 at least ^0000FF+14^000000:",
+	"^0000FFFor each Refine Level^000000 of ^0000FFentire set^000000:",
+	"^0000FFFor each 5 Refine Levels^000000 of ^0000FFentire set^000000:",
 	
 	- Player died:
 	"If you are incapacitated, the mercenary will disappear.",
@@ -139,8 +165,12 @@ Item Description:
 	"Warning - After using it, unless you choose the destination in 1 minute it will be useless",
 	
 	- Rental Items:
+	"^000088Rental Item^000000",
 	"^FF0000This item is not refundable.^000000",
 	"^FF0000This item cannot be traded with other accounts.^000000",
+	
+	"^FF0000Can only be sold to NPCs and put into storage.^000000",
+	"^ff0000Can only be sold to NPC's.",
 	
 Equipment Info:
 			"________________________",
@@ -149,6 +179,7 @@ Equipment Info:
 			"^0000CCDefense:^000000 ",
 			"^0000CCPosition:^000000 ",
 			"^0000CCWeight:^000000 ",
+			"^0000CCRefineable:^000000 No", > Only used when the item is NOT refinable
 			"^0000CCWeapon Level:^000000 ",
 			"________________________",
 			"^0000CCRequirement:^000000",
@@ -156,14 +187,21 @@ Equipment Info:
 			"<Job Classes>"
 
 Exchange NPC Locations:
-	"<NAVI>^0033CCDesigner Heidam^000000<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI> can exchange it with Costume Enchant Stone Box5.",
+	"<NAVI>^0033CCDesigner Heidam^000000<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI> can exchange it with Costume Enchant Stone Box 5.",
 		
 	"X can be bought from <NAVI>^0033CCCat Hand Salesman Nyarom^000000<INFO>itemmall,41,50,0,100,0,0</INFO></NAVI>.",
 	
 	"<NAVI>^0033CCLace La Zard^000000<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>",
 	"<NAVI>^0033CCAver De Dosh^000000<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
 	"<NAVI>^0033CCGregio Grumani^000000<INFO>mal_in01,24,121,0,100,0,0</INFO></NAVI>",
-		
+	"<NAVI>^4D4DFFNyan Time^000000<INFO>malangdo,208,163,0,100,0,0</INFO></NAVI>^000000",
+	"<NAVI>^4D4DFFNyan Time^000000<INFO>moc_para01,26,174,0,100,0,0</INFO></NAVI>^000000",
+	"<NAVI>^0033CCProntera Family Relations Guide^000000<INFO>prt_in,285,171,0,100,0,0</INFO></NAVI>^000000",
+	"<NAVI>^0033CCLasagna Independent Helper^000000<INFO>lasagna,100,200,0,100,0,0</INFO></NAVI>^000000",
+	"<NAVI>^0033CCBeginner's Weapon Manager^000000<INFO>prontera,157,191,0,100,0,0</INFO></NAVI>^000000",
+	"Take it to <NAVI>^0033CCEquipment Support Manager^000000<INFO>prontera,157,279,0,100,0,0</INFO></NAVI>^000000.",
+	"Take it to <NAVI>^4D4DFFCentro^000000<INFO>prontera,148,282,0,100,0,0</INFO></NAVI>^000000 and exchange it for one of the items below:",
+	
 Shadow Equipment:
 	Armor: "A suit of armor worn on top of normal armor for additional defense. Needs a complete set to have bonus effect.",
 	Weapon: "A pair of gloves that can draw the wearer's potential ability.",
